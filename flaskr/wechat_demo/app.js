@@ -1,0 +1,1 @@
+App({}); // make an instance for the mini-program

@@ -1,0 +1,1 @@
+Page({}); // instance of the page

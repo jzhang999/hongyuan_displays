@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}编辑 "{{ post['product_name'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="title">名称</label>
+    <input name="title" id="title"
+      value="{{ request.form['product_name'] or post['product_name'] }}" required>
+
+    <label>分类</label>
+    <input name="cat" id="cat" value="{{ request.form['cat'] or post['category'] }}" required>
+
+    <label>是否推荐</label>
+    <input name="rec" id="rec" value="{{ request.form['rec'] or post['recommend'] }}" required>
+
+    <label for="body">产品描述</label>
+    <textarea name="body" id="body">{{ request.form['description'] or post['description'] }}</textarea>
+
+    <input type="submit" value="Save">
+  </form>
+  <hr>
+  <form action="{{ url_for('blog.product_delete', id=post['id']) }}" method="post">
+    <input class="danger" type="submit" value="删除" onclick="return confirm('确定要删除吗？');">
+  </form>
+{% endblock %}

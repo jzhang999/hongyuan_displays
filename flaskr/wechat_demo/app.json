@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/company_info/company_info",
+    "pages/contact/contact",
+    "pages/cat_search/cat_search",
+    "pages/product_search/product_search",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#7DAFFF",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "鸿源美腾"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/company_info/company_info",
+        "text": "关于我们"
+      },
+      {
+        "pagePath": "pages/contact/contact",
+        "text": "联系方式"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

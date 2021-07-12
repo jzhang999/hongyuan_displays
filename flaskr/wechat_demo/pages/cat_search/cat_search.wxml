@@ -1,0 +1,18 @@
+<view class="section">
+  <view class="section_title">请选择产品分类</view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{cat_array}}">
+    <view class="picker">
+      <text class="text">当前选择：{{cat_array[index]}} </text>
+    </view>
+  </picker>
+</view>
+
+<view wx:for="{{items}}">
+  <view class="pics">
+    <image bindtap="goDetail" data-id="{{item['id']}}" src = "http://172.20.1.246:5000/static/uploaded_files/{{item['pic_name']}}" mode="aspectFit"></image>
+  </view>
+  <view class="desc">
+    <view><text>产品名称: {{item["product_name"]}}</text></view>
+    <view><text>产品分类: {{item["category"]}}</text></view>
+  </view>
+</view>

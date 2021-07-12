@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>产品</h1>
+  {% if g.user %}
+    <a class="action" href="{{ url_for('blog.product_create') }}">新建</a>
+    <a class="action" href="{{ url_for('products.index') }}">查看</a>
+  {% endif %}
+
+  <h1>分类</h1>
+  {% if g.user %}
+    <a class="action" href="{{ url_for('blog.cat_create') }}">新建</a>
+    <a class="action" href="{{ url_for('categories.index') }}">查看</a>
+  {% endif %}
+{% endblock %}

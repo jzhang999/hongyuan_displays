@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}新增分类{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post" enctype=multipart/form-data>
+    <label for="cat_name">名称</label>
+    <input name="cat_name" id="cat_name" value="{{ request.form['cat_name'] }}" required>
+    <input type="submit" value="保存">
+  </form>
+{% endblock %}

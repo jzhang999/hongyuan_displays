@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>产品</h1>
+  {% if g.user %}
+    <a class="action" href="{{ url_for('blog.product_create') }}">新建</a>
+    <a class="action" href="{{ url_for('products.index') }}">查看</a>
+  {% endif %}
+
+  <h1>分类</h1>
+  {% if g.user %}
+    <a class="action" href="{{ url_for('blog.cat_create') }}">新建</a>
+    <a class="action" href="{{ url_for('categories.index') }}">查看</a>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {% for post in posts %}
+    <div>
+      <h3 style="display: inline-block; font-family: serif">{{ post['cat_name'] }}</h3>
+      <a style="margin-top: 1.6rem; float: right" class="action" href="{{ url_for('blog.cat_update', cat_name=post['cat_name']) }}">编辑</a>
+    </div>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,40 @@
+.pics {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center;
+  background-color: white;
+}
+
+.pics image{
+  width: 500rpx;
+  height: 500rpx;
+}
+
+.name {
+  padding: 13px;
+  font-weight: 700;
+  font-size: x-large;
+}
+
+.cat {
+  padding: 13px;
+  font-weight: 400;
+  font-size: medium;
+  color: grey;
+}
+
+.line{
+  width: 100%;
+  margin-top: 30rpx;
+  height: 2rpx; 
+  margin-bottom: 30rpx;
+  background: #aaa;
+}
+
+.desc {
+  padding: 13px;
+  font-weight: 400;
+  font-size: medium;
+  color: grey;
+}

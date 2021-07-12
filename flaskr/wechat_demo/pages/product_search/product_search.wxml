@@ -1,0 +1,20 @@
+<form catchsubmit="formSubmit">
+  <view class="search-bar">
+    <view class="search-bar-cells">
+      <input class="search-bar-input" name="input" placeholder="请输入产品名称" />
+    </view>
+  </view>
+  <view class="btn-area">
+    <button style="margin: 30rpx 0rpx" formType="submit"><text class="text">查询</text></button>
+  </view>
+</form>
+
+<view wx:for="{{items}}">
+  <view class="pics">
+    <image bindtap="goDetail" data-id="{{item['id']}}" src = "http://172.20.1.246:5000/static/uploaded_files/{{item['pic_name']}}" mode="aspectFit"></image>
+  </view>
+  <view class="desc">
+    <view><text>产品名称: {{item["product_name"]}}</text></view>
+    <view><text>产品分类: {{item["category"]}}</text></view>
+  </view>
+</view>

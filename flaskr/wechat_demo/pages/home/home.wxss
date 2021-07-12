@@ -1,0 +1,61 @@
+.btn {
+  display: flex;
+  flex-direction: row;
+}
+
+.cat_search {
+  width: 50%;
+  margin-bottom: 30rpx;
+}
+
+.cat_search_text {
+  width: 100%;
+  color: rgb(85, 84, 84);
+}
+
+.prod_search {
+  width: 50%;
+  margin-bottom: 30rpx;
+}
+
+.prod_search_text {
+  width: 100%;
+  color: rgb(85, 84, 84);
+}
+
+.rec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: larger;
+  margin-bottom: 20rpx;
+  color: rgb(85, 84, 84);
+}
+
+.line{
+  width:100%;
+  height:2rpx; 
+  background:#aaa;
+}
+
+.desc {
+  padding: 13px;
+  margin-bottom: 30rpx;
+  font-weight: 400;
+  font-size: medium;
+  color: grey;
+}
+
+.pics {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center;
+  background-color: white;
+}
+
+.pics image{
+  width: 400rpx;
+  height: 400rpx;
+}

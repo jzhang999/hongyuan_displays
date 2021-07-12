@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}编辑分类{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post" enctype=multipart/form-data>
+    <label for="cat_name">名称</label>
+    <input name="cat_name" id="cat_name" value="{{ request.form['cat_name'] or post['cat_name'] }}" required>
+    <input type="submit" value="保存">
+  </form>
+  <hr>
+  <form action="{{ url_for('blog.cat_delete', cat_name=post['cat_name']) }}" method="post">
+    <input class="danger" type="submit" value="删除" onclick="return confirm('确定要删除吗？');">
+  </form>
+{% endblock %}
