@@ -13,6 +13,7 @@
     "navigationBarTitleText": "鸿源美腾"
   },
   "tabBar": {
+    "selectedColor": "#7DAFFF",
     "list": [
       {
         "pagePath": "pages/home/home",

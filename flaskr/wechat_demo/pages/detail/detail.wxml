@@ -12,5 +12,9 @@
 </view>
 
 <view class="share">
-  <button class="sharing" open-type="share">立即分享</button>
+  <button class="sharing" open-type="share" size="mini">
+    <view class="share_img">
+      <image src="../static/share_icon.png" mode="aspectFit"></image>
+    </view>
+  </button>
 </view>

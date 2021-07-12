@@ -26,7 +26,7 @@ Page({
     });
   },
   onShareAppMessage: function (ops) {
-    if (ops.from === 'button') {
+    if (ops.from === 'image') {
     }
     return {
       title: "鸿源美腾",  // title for share
