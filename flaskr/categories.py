@@ -56,7 +56,7 @@ def get_all_cats():
 
 def get_post(key):
     posts = get_db().execute(
-        ' SELECT p.id, product_name, description, created, pic_name, category'
+        ' SELECT p.id, product_name, description, created, pic_name0, category'
         ' FROM product p JOIN category c ON p.category = c.cat_name'
         ' WHERE cat_name == ?'
         ' ORDER BY created DESC',

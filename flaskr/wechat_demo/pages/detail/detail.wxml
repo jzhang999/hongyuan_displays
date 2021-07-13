@@ -1,12 +1,19 @@
-<view wx:for="{{items}}">
-  <view class="pics">
-    <image src = "http://172.20.1.246:5000/static/uploaded_files/{{item['pic_name']}}" mode="aspectFit"></image>
-  </view>
+<view class="swiper">
+  <swiper indicator-dots="true" style="height: 500rpx">
+    <block wx:for="{{pics}}" wx:key="*this">
+      <swiper-item>
+        <view class="pics">
+          <image src = "http://172.20.1.246:5000/static/uploaded_files/{{item}}" mode="aspectFit"></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view>
   <view><text class="name">{{item["product_name"]}}</text></view>
   <view><text class="cat">分类: {{item["category"]}}</text></view>
-
   <view class="line"></view>
-
   <view><text class="desc">产品描述:</text></view>
   <view class="desc"><text>{{item["description"]}}</text></view>
 </view>

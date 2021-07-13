@@ -9,9 +9,9 @@
 
 <view class="line"></view>
 
-<view class="item" wx:for="{{items}}">
+<view class="item" wx:for="{{items}}" wx:key="*this">
   <view class="pics">
-    <image bindtap="goDetail" data-id="{{item['id']}}" src = "http://172.20.1.246:5000/static/uploaded_files/{{item['pic_name']}}" mode="aspectFit"></image>
+    <image bindtap="goDetail" data-id="{{item['id']}}" src = "http://172.20.1.246:5000/static/uploaded_files/{{item['pic_name0']}}" mode="aspectFit"></image>
   </view>
   <view class="desc">
     <view><text>产品名称: {{item["product_name"]}}</text></view>

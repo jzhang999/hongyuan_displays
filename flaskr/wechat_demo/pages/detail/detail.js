@@ -2,7 +2,8 @@
 Page({
   data: {
     product_id: "",
-    items: []
+    item: {},
+    pics: []
   },
   onLoad(e) {
     this.setData({ product_id: JSON.stringify(wx.getStorageSync('productId')) })
@@ -18,7 +19,8 @@ Page({
       },
       dataType:'json',
       success(res) {
-        that.setData({ items: res.data });
+        that.setData({ item: res.data[0] });
+        that.setData({ pics: [that.data.item['pic_name0'], that.data.item['pic_name1'], that.data.item['pic_name2']] });
       }
     });
     wx.showShareMenu({ // share the page

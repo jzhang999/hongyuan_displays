@@ -60,7 +60,7 @@ def recommendation():
 
 def get_post(key):
     posts = get_db().execute(
-        ' SELECT p.id, product_name, description, created, pic_name, category'
+        ' SELECT p.id, product_name, description, created, pic_name0, category'
         ' FROM product p'
         ' WHERE product_name LIKE ?',
         ('%'+key+'%',)
@@ -74,7 +74,7 @@ def get_post(key):
 
 def get_post_id(id):
     posts = get_db().execute(
-        ' SELECT p.id, product_name, description, created, pic_name, category'
+        ' SELECT p.id, product_name, description, created, pic_name0, pic_name1, pic_name2, category'
         ' FROM product p'
         ' WHERE id == ?',
         (id,)
@@ -88,7 +88,7 @@ def get_post_id(id):
 
 def get_post_rec():
     posts = get_db().execute(
-        ' SELECT p.id, product_name, description, created, pic_name, category'
+        ' SELECT p.id, product_name, description, created, pic_name0, category'
         ' FROM product p'
         ' WHERE recommend == "是"'
     ).fetchall()
