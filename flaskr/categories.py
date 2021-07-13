@@ -25,7 +25,6 @@ def index():
 def cat_search():
     if request.method == 'POST':
         search_key = json.loads(request.values.get("search_key"))
-        print(search_key)
 
     posts = get_post(search_key)
     dicts = []

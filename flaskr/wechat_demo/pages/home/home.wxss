@@ -29,7 +29,7 @@
   justify-content: center;
   font-weight: 600;
   font-size: larger;
-  margin-bottom: 20rpx;
+  margin-bottom: 23rpx;
   color: rgb(85, 84, 84);
 }
 

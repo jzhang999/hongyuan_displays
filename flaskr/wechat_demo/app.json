@@ -8,12 +8,12 @@
     "pages/detail/detail"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#7DAFFF",
+    "navigationBarBackgroundColor": "#BFBDBD",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "鸿源美腾"
   },
   "tabBar": {
-    "selectedColor": "#7DAFFF",
+    "selectedColor": "#BFBDBD",
     "list": [
       {
         "pagePath": "pages/home/home",
