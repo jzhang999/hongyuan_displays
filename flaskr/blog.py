@@ -9,16 +9,11 @@ from flaskr.db import get_db
 
 bp = Blueprint('blog', __name__)
 
+
 # / means the first page?
 @bp.route('/')
 def index():
-    db = get_db()
-    posts = db.execute(
-        'SELECT p.id, product_name, description, created, author_id, username, pic_name'
-        ' FROM product p JOIN user u ON p.author_id = u.id'
-        ' ORDER BY created DESC'
-    ).fetchall()
-    return render_template('blog/index.html', posts=posts)
+    return render_template('blog/index.html')
 
 
 @bp.route('/uploads/<filename>')
@@ -36,9 +31,17 @@ def product_create():
         rec = request.form['rec']
 
         # for saving the pics
-        pic = request.files['file']
-        pic_name = pic.filename
-        pic.save(os.path.join("./flaskr/static/uploaded_files", pic_name))
+        pic0 = request.files['file0']
+        pic_name0 = pic0.filename
+        pic0.save(os.path.join("./flaskr/static/uploaded_files", pic_name0))
+
+        pic1 = request.files['file1']
+        pic_name1 = pic1.filename
+        pic1.save(os.path.join("./flaskr/static/uploaded_files", pic_name1))
+
+        pic2 = request.files['file2']
+        pic_name2 = pic2.filename
+        pic2.save(os.path.join("./flaskr/static/uploaded_files", pic_name2))
 
         error = None
 
@@ -50,9 +53,9 @@ def product_create():
         else:
             db = get_db()
             db.execute(
-                'INSERT INTO product (product_name, description, author_id, pic_name, category, recommend)'
-                ' VALUES (?, ?, ?, ?, ?, ?)',
-                (product_name, description, g.user['id'], pic_name, cat, rec)
+                'INSERT INTO product (product_name, description, author_id, pic_name0, pic_name1, pic_name2, category, recommend)'
+                ' VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+                (product_name, description, g.user['id'], pic_name0, pic_name1, pic_name2, cat, rec)
             )
             db.commit()
             return redirect(url_for('blog.index'))
@@ -87,7 +90,7 @@ def cat_create():
 
 def get_post(id, check_author=True):
     post = get_db().execute(
-        'SELECT p.id, product_name, description, created, author_id, username, pic_name, category, recommend'
+        'SELECT p.id, product_name, description, created, author_id, username, category, recommend, pic_name0, pic_name1, pic_name2'
         ' FROM product p JOIN user u ON p.author_id = u.id'
         ' WHERE p.id = ?',
         (id,)
@@ -135,7 +138,11 @@ def product_update(id):
 @bp.route('/<int:id>/product_delete', methods=('POST',))
 @login_required
 def product_delete(id):
-    get_post(id)
+    post = get_post(id)
+    os.remove(os.path.join("./flaskr/static/uploaded_files", post['pic_name0']))
+    os.remove(os.path.join("./flaskr/static/uploaded_files", post['pic_name1']))
+    os.remove(os.path.join("./flaskr/static/uploaded_files", post['pic_name2']))
+
     db = get_db()
     db.execute('DELETE FROM product WHERE id = ?', (id,))
     db.commit()

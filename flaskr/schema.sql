@@ -16,7 +16,9 @@ CREATE TABLE product (
   created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   product_name TEXT NOT NULL,
   description TEXT NOT NULL,
-  pic_name STRING NOT NULL,
+  pic_name0 STRING NOT NULL,
+  pic_name1 STRING NOT NULL,
+  pic_name2 STRING NOT NULL,
   recommend STRING NOT NULL,
   FOREIGN KEY (author_id) REFERENCES user (id),
   FOREIGN KEY (category) REFERENCES category (cat_name)
