@@ -13,18 +13,27 @@
     "navigationBarTitleText": "鸿源美腾"
   },
   "tabBar": {
-    "selectedColor": "#BFBDBD",
+    "color": "#7A7E83",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#515151",
     "list": [
       {
         "pagePath": "pages/home/home",
+        "iconPath": "pages/static/主页.png",
+        "selectedIconPath": "pages/static/主页select.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/company_info/company_info",
+        "iconPath": "pages/static/公司.png",
+        "selectedIconPath": "pages/static/公司select.png",
         "text": "关于我们"
       },
       {
         "pagePath": "pages/contact/contact",
+        "iconPath": "pages/static/联系.png",
+        "selectedIconPath": "pages/static/联系select.png",
         "text": "联系方式"
       }
     ]
