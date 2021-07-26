@@ -15,6 +15,9 @@
     <label>是否推荐</label>
     <input name="rec" id="rec"  value="{{ request.form['rec'] }}" required>
 
+    <label>相关耗材</label>
+    <input name="acc" id="acc"  value="{{ request.form['acc'] }}" required>
+
     <label for="description">产品描述</label>
     <textarea name="description" id="description">{{ request.form['description'] }}</textarea>
 

@@ -20,6 +20,7 @@ CREATE TABLE product (
   pic_name1 STRING NOT NULL,
   pic_name2 STRING NOT NULL,
   recommend STRING NOT NULL,
+  accessories STRING NOT NULL,
   FOREIGN KEY (author_id) REFERENCES user (id),
   FOREIGN KEY (category) REFERENCES category (cat_name)
 );

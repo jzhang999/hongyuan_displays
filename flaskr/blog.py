@@ -29,6 +29,7 @@ def product_create():
         description = request.form['description']
         cat = request.form['cat']
         rec = request.form['rec']
+        acc = request.form['acc']
 
         # for saving the pics
         pic0 = request.files['file0']
@@ -53,9 +54,9 @@ def product_create():
         else:
             db = get_db()
             db.execute(
-                'INSERT INTO product (product_name, description, author_id, pic_name0, pic_name1, pic_name2, category, recommend)'
-                ' VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-                (product_name, description, g.user['id'], pic_name0, pic_name1, pic_name2, cat, rec)
+                'INSERT INTO product (product_name, description, author_id, pic_name0, pic_name1, pic_name2, category, recommend, accessories)'
+                ' VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                (product_name, description, g.user['id'], pic_name0, pic_name1, pic_name2, cat, rec, acc)
             )
             db.commit()
             return redirect(url_for('blog.index'))
@@ -90,7 +91,7 @@ def cat_create():
 
 def get_post(id, check_author=True):
     post = get_db().execute(
-        'SELECT p.id, product_name, description, created, author_id, username, category, recommend, pic_name0, pic_name1, pic_name2'
+        'SELECT p.id, product_name, description, created, author_id, username, category, recommend, pic_name0, pic_name1, pic_name2, accessories'
         ' FROM product p JOIN user u ON p.author_id = u.id'
         ' WHERE p.id = ?',
         (id,)
@@ -115,6 +116,7 @@ def product_update(id):
         body = request.form['body']
         cat = request.form['cat']
         rec = request.form['rec']
+        acc = request.form['acc']
         error = None
 
         if not title:
@@ -125,9 +127,9 @@ def product_update(id):
         else:
             db = get_db()
             db.execute(
-                'UPDATE product SET product_name = ?, description= ?, category= ?, recommend= ?'
+                'UPDATE product SET product_name = ?, description= ?, category= ?, recommend= ?, accessories= ?'
                 ' WHERE id = ?',
-                (title, body, cat, rec, id)
+                (title, body, cat, rec, acc, id)
             )
             db.commit()
             return redirect(url_for('blog.index'))
