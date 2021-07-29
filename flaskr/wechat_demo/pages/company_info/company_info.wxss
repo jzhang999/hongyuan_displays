@@ -1,0 +1,9 @@
+.texts {
+  color: grey;
+  padding: 20px;
+}
+
+.pic {
+  margin-top: 50rpx;
+  padding: 20px;
+}

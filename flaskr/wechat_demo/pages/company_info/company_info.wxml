@@ -1,3 +1,15 @@
-<view>
-  <text>info page</text>
+<view class="texts">
+  <text>我们是鸿源美腾</text>
+</view>
+
+<view class="texts">
+  <text>我们专注办公20年</text>
+</view>
+
+<view class="texts">
+  <text>是销售商，方案商，也是服务商</text>
+</view>
+
+<view class="pic">
+  <image src = "../static/background.jpeg" mode="aspectFit"></image>
 </view>

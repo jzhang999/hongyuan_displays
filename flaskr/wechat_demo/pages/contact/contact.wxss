@@ -1,0 +1,4 @@
+.texts {
+  color: grey;
+  padding: 20px;
+}
