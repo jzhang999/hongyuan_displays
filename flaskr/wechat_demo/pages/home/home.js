@@ -23,7 +23,7 @@ Page({
   onLoad(e) {
     const that = this;
     wx.request({
-      url: 'http://172.20.1.246:5000/recommendation',
+      url: 'http://0.0.0.0:5000/recommendation',
       method: "POST",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"

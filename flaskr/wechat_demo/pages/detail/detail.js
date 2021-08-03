@@ -9,7 +9,7 @@ Page({
     this.setData({ product_id: JSON.stringify(wx.getStorageSync('productId')) })
     const that = this;
     wx.request({
-      url: 'http://172.20.1.246:5000/product_search_id',
+      url: 'http://0.0.0.0:5000/product_search_id',
       method: "POST",
       data: {
         product_id: that.data.product_id,
