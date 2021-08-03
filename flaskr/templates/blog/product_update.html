@@ -22,7 +22,7 @@
     <label for="body">产品描述</label>
     <textarea name="body" id="body">{{ request.form['description'] or post['description'] }}</textarea>
 
-    <input type="submit" value="Save">
+    <input type="submit" value="保存">
   </form>
   <hr>
   <form action="{{ url_for('blog.product_delete', id=post['id']) }}" method="post">
