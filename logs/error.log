@@ -1,0 +1,35 @@
+[Thu Aug 05 19:19:25.573147 2021] [wsgi:error] [pid 29005] [remote 111.197.250.153:15144] [2021-08-05 19:19:25,564] ERROR in app: Exception on /product_create [POST]
+[Thu Aug 05 19:19:25.573201 2021] [wsgi:error] [pid 29005] [remote 111.197.250.153:15144] Traceback (most recent call last):
+[Thu Aug 05 19:19:25.573205 2021] [wsgi:error] [pid 29005] [remote 111.197.250.153:15144]   File "/usr/local/python3/lib/python3.8/site-packages/flask/app.py", line 2070, in wsgi_app
+[Thu Aug 05 19:19:25.573208 2021] [wsgi:error] [pid 29005] [remote 111.197.250.153:15144]     response = self.full_dispatch_request()
+[Thu Aug 05 19:19:25.573211 2021] [wsgi:error] [pid 29005] [remote 111.197.250.153:15144]   File "/usr/local/python3/lib/python3.8/site-packages/flask/app.py", line 1515, in full_dispatch_request
+[Thu Aug 05 19:19:25.573214 2021] [wsgi:error] [pid 29005] [remote 111.197.250.153:15144]     rv = self.handle_user_exception(e)
+[Thu Aug 05 19:19:25.573216 2021] [wsgi:error] [pid 29005] [remote 111.197.250.153:15144]   File "/usr/local/python3/lib/python3.8/site-packages/flask/app.py", line 1513, in full_dispatch_request
+[Thu Aug 05 19:19:25.573218 2021] [wsgi:error] [pid 29005] [remote 111.197.250.153:15144]     rv = self.dispatch_request()
+[Thu Aug 05 19:19:25.573221 2021] [wsgi:error] [pid 29005] [remote 111.197.250.153:15144]   File "/usr/local/python3/lib/python3.8/site-packages/flask/app.py", line 1499, in dispatch_request
+[Thu Aug 05 19:19:25.573223 2021] [wsgi:error] [pid 29005] [remote 111.197.250.153:15144]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Thu Aug 05 19:19:25.573226 2021] [wsgi:error] [pid 29005] [remote 111.197.250.153:15144]   File "/var/www/hongyuan_displays/flaskr/auth.py", line 97, in wrapped_view
+[Thu Aug 05 19:19:25.573228 2021] [wsgi:error] [pid 29005] [remote 111.197.250.153:15144]     return view(**kwargs)
+[Thu Aug 05 19:19:25.573230 2021] [wsgi:error] [pid 29005] [remote 111.197.250.153:15144]   File "/var/www/hongyuan_displays/flaskr/blog.py", line 37, in product_create
+[Thu Aug 05 19:19:25.573232 2021] [wsgi:error] [pid 29005] [remote 111.197.250.153:15144]     pic0.save(os.path.join("./flaskr/static/uploaded_files", pic_name0))
+[Thu Aug 05 19:19:25.573235 2021] [wsgi:error] [pid 29005] [remote 111.197.250.153:15144]   File "/usr/local/python3/lib/python3.8/site-packages/werkzeug/datastructures.py", line 3013, in save
+[Thu Aug 05 19:19:25.573237 2021] [wsgi:error] [pid 29005] [remote 111.197.250.153:15144]     dst = open(dst, "wb")
+[Thu Aug 05 19:19:25.573240 2021] [wsgi:error] [pid 29005] [remote 111.197.250.153:15144] FileNotFoundError: [Errno 2] No such file or directory: './flaskr/static/uploaded_files/Screen Shot 2021-08-03 at 2.33.58 PM.png'
+[Thu Aug 05 20:10:53.860035 2021] [wsgi:error] [pid 6997] [remote 111.197.250.153:13518] [2021-08-05 20:10:53,858] ERROR in app: Exception on /product_create [POST]
+[Thu Aug 05 20:10:53.860076 2021] [wsgi:error] [pid 6997] [remote 111.197.250.153:13518] Traceback (most recent call last):
+[Thu Aug 05 20:10:53.860080 2021] [wsgi:error] [pid 6997] [remote 111.197.250.153:13518]   File "/usr/local/python3/lib/python3.8/site-packages/flask/app.py", line 2070, in wsgi_app
+[Thu Aug 05 20:10:53.860083 2021] [wsgi:error] [pid 6997] [remote 111.197.250.153:13518]     response = self.full_dispatch_request()
+[Thu Aug 05 20:10:53.860086 2021] [wsgi:error] [pid 6997] [remote 111.197.250.153:13518]   File "/usr/local/python3/lib/python3.8/site-packages/flask/app.py", line 1515, in full_dispatch_request
+[Thu Aug 05 20:10:53.860089 2021] [wsgi:error] [pid 6997] [remote 111.197.250.153:13518]     rv = self.handle_user_exception(e)
+[Thu Aug 05 20:10:53.860092 2021] [wsgi:error] [pid 6997] [remote 111.197.250.153:13518]   File "/usr/local/python3/lib/python3.8/site-packages/flask/app.py", line 1513, in full_dispatch_request
+[Thu Aug 05 20:10:53.860094 2021] [wsgi:error] [pid 6997] [remote 111.197.250.153:13518]     rv = self.dispatch_request()
+[Thu Aug 05 20:10:53.860097 2021] [wsgi:error] [pid 6997] [remote 111.197.250.153:13518]   File "/usr/local/python3/lib/python3.8/site-packages/flask/app.py", line 1499, in dispatch_request
+[Thu Aug 05 20:10:53.860107 2021] [wsgi:error] [pid 6997] [remote 111.197.250.153:13518]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Thu Aug 05 20:10:53.860109 2021] [wsgi:error] [pid 6997] [remote 111.197.250.153:13518]   File "/var/www/hongyuan_displays/flaskr/auth.py", line 97, in wrapped_view
+[Thu Aug 05 20:10:53.860112 2021] [wsgi:error] [pid 6997] [remote 111.197.250.153:13518]     return view(**kwargs)
+[Thu Aug 05 20:10:53.860114 2021] [wsgi:error] [pid 6997] [remote 111.197.250.153:13518]   File "/var/www/hongyuan_displays/flaskr/blog.py", line 37, in product_create
+[Thu Aug 05 20:10:53.860117 2021] [wsgi:error] [pid 6997] [remote 111.197.250.153:13518]     pic0.save(os.path.join("/static/uploaded_files", pic_name0))
+[Thu Aug 05 20:10:53.860119 2021] [wsgi:error] [pid 6997] [remote 111.197.250.153:13518]   File "/usr/local/python3/lib/python3.8/site-packages/werkzeug/datastructures.py", line 3013, in save
+[Thu Aug 05 20:10:53.860122 2021] [wsgi:error] [pid 6997] [remote 111.197.250.153:13518]     dst = open(dst, "wb")
+[Thu Aug 05 20:10:53.860124 2021] [wsgi:error] [pid 6997] [remote 111.197.250.153:13518] FileNotFoundError: [Errno 2] No such file or directory: '/static/uploaded_files/Screen Shot 2021-08-03 at 2.33.31 PM.png'
+[Fri Aug 06 07:21:26.191565 2021] [wsgi:error] [pid 7014] [client 106.75.211.111:43944] Invalid Content-Length header value of '18446744073709551615' was supplied.: /var/www/hongyuan_displays/wsgi.py

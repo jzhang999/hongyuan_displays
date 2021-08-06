@@ -18,7 +18,7 @@ def index():
 
 @bp.route('/uploads/<filename>')
 def uploaded_file(filename):
-    return send_from_directory("./flaskr/static/uploaded_files", filename)
+    return send_from_directory("/var/www/hongyuan_displays/flaskr/static/uploaded_files", filename)
 
 
 @bp.route('/product_create', methods=('GET', 'POST'))
@@ -34,15 +34,15 @@ def product_create():
         # for saving the pics
         pic0 = request.files['file0']
         pic_name0 = pic0.filename
-        pic0.save(os.path.join("./flaskr/static/uploaded_files", pic_name0))
+        pic0.save(os.path.join("/var/www/hongyuan_displays/flaskr/static/uploaded_files", pic_name0))
 
         pic1 = request.files['file1']
         pic_name1 = pic1.filename
-        pic1.save(os.path.join("./flaskr/static/uploaded_files", pic_name1))
+        pic1.save(os.path.join("/var/www/hongyuan_displays/flaskr/static/uploaded_files", pic_name1))
 
         pic2 = request.files['file2']
         pic_name2 = pic2.filename
-        pic2.save(os.path.join("./flaskr/static/uploaded_files", pic_name2))
+        pic2.save(os.path.join("/var/www/hongyuan_displays/flaskr/static/uploaded_files", pic_name2))
 
         error = None
 
@@ -141,9 +141,9 @@ def product_update(id):
 @login_required
 def product_delete(id):
     post = get_post(id)
-    os.remove(os.path.join("./flaskr/static/uploaded_files", post['pic_name0']))
-    os.remove(os.path.join("./flaskr/static/uploaded_files", post['pic_name1']))
-    os.remove(os.path.join("./flaskr/static/uploaded_files", post['pic_name2']))
+    os.remove(os.path.join("/var/www/hongyuan_displays/flaskr/static/uploaded_files", post['pic_name0']))
+    os.remove(os.path.join("/var/www/hongyuan_displays/flaskr/static/uploaded_files", post['pic_name1']))
+    os.remove(os.path.join("/var/www/hongyuan_displays/flaskr/static/uploaded_files", post['pic_name2']))
 
     db = get_db()
     db.execute('DELETE FROM product WHERE id = ?', (id,))
