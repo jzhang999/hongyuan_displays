@@ -6,13 +6,12 @@ Page({
     pics: []
   },
   onLoad(e) {
-    this.setData({ product_id: JSON.stringify(wx.getStorageSync('productId')) })
     const that = this;
     wx.request({
-      url: 'http://0.0.0.0:5000/product_search_id',
+      url: 'https://ningbohongyuan.com/product_search_id',
       method: "POST",
       data: {
-        product_id: that.data.product_id,
+        product_id: e.product_id,
       },
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
@@ -32,7 +31,7 @@ Page({
     }
     return {
       title: "鸿源美腾",  // title for share
-      path: 'pages/detail/detail',
+      path: 'pages/detail/detail?product_id=' + ops.product_id,
       success: function (res) {
       },
       fail: function (res) {

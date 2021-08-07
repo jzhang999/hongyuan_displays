@@ -3,7 +3,7 @@
     <block wx:for="{{pics}}" wx:key="*this">
       <swiper-item>
         <view class="pics">
-          <image src = "http://0.0.0.0:5000/static/uploaded_files/{{item}}" mode="aspectFit"></image>
+          <image src = "https://ningbohongyuan.com/static/uploaded_files/{{item}}" mode="aspectFit"></image>
         </view>
       </swiper-item>
     </block>
