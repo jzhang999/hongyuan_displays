@@ -18,6 +18,7 @@ Page({
       },
       dataType:'json',
       success(res) {
+        that.setData({ product_id: e.product_id });
         that.setData({ item: res.data[0] });
         that.setData({ pics: [that.data.item['pic_name0'], that.data.item['pic_name1'], that.data.item['pic_name2']] });
       }
@@ -31,7 +32,7 @@ Page({
     }
     return {
       title: "鸿源美腾",  // title for share
-      path: 'pages/detail/detail?product_id=' + ops.product_id,
+      path: 'pages/detail/detail?product_id=' + this.data.product_id,
       success: function (res) {
       },
       fail: function (res) {
