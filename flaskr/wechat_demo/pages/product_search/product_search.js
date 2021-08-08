@@ -8,7 +8,7 @@ Page({
     this.setData({ search_key: JSON.stringify(e.detail.value) })
     const that = this;
     wx.request({
-      url: 'https://ningbohongyuan.com/product_search',
+      url: 'https://www.ningbohongyuan.com/product_search',
       method: "POST",
       data: {
         search_key: that.data.search_key,
