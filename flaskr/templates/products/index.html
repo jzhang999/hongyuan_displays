@@ -29,9 +29,9 @@
       <p class="body">{{ post['description'] }}</p>
       <h5 class="subtitle">适用耗材：</h5>
       <p class="body">{{ post['accessories'] }}</p>
-      <img src="{{'../../static/uploaded_files/' + post['pic_name0']}}">
-      <img src="{{'../../static/uploaded_files/' + post['pic_name1']}}">
-      <img src="{{'../../static/uploaded_files/' + post['pic_name2']}}">
+      <img style="width: 400px; height: 400px; object-fit: contain;" src="{{'../../static/uploaded_files/' + post['pic_name0']}}">
+      <img style="width: 400px; height: 400px; object-fit: contain;" src="{{'../../static/uploaded_files/' + post['pic_name1']}}">
+      <img style="width: 400px; height: 400px; object-fit: contain;" src="{{'../../static/uploaded_files/' + post['pic_name2']}}">
     </article>
     {% if not loop.last %}
       <hr>
