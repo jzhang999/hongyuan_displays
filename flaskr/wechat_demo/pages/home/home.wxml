@@ -4,17 +4,19 @@
 </view>
 
 <view>
-  <text class="rec"> 产 品 推 荐 </text>
+  <text class="rec"> 本 期 推 荐 </text>
 </view>
 
 <view class="line"></view>
 
-<view class="item" wx:for="{{items}}">
-  <view class="pics">
-    <image bindtap="goDetail" data-id="{{item['id']}}" src = "https://www.ningbohongyuan.com/static/uploaded_files/{{item['pic_name0']}}" mode="aspectFit"></image>
-  </view>
-  <view class="desc">
-    <view><text>产品名称: {{item["product_name"]}}</text></view>
-    <view><text>产品分类: {{item["category"]}}</text></view>
+<view class="item" wx:for="{{items}}" wx:if="{{index<2}}">
+  <view class="product">
+    <view class="pics">
+      <image bindtap="goDetail" data-id="{{item['id']}}" src = "https://www.ningbohongyuan.com/static/uploaded_files/{{item['pic_name0']}}" mode="aspectFit"></image>
+    </view>
+    <view class="desc">
+      <view><text>产品名称: {{item["product_name"]}}</text></view>
+      <view><text>产品分类: {{item["category"]}}</text></view>
+    </view>
   </view>
 </view>
