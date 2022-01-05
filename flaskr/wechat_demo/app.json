@@ -5,7 +5,8 @@
     "pages/contact/contact",
     "pages/cat_search/cat_search",
     "pages/product_search/product_search",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/more_rec/more_rec"
   ],
   "window": {
     "navigationBarBackgroundColor": "#BFBDBD",

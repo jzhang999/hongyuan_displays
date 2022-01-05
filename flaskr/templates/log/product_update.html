@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}编辑 "{{ post['product_name'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <form method="post" enctype=multipart/form-data>
+        <label for="title">名称</label>
+        <input name="title" id="title" value="{{ request.form['product_name'] or post['product_name'] }}" required>
+
+        <label>分类</label>
+        <input name="cat" id="cat" value="{{ request.form['cat'] or post['category'] }}" required>
+
+        <label>是否推荐</label>
+        <input name="rec" id="rec" value="{{ request.form['rec'] or post['recommend'] }}" required>
+
+        <label>相关耗材</label>
+        <input name="acc" id="acc"  value="{{ request.form['acc'] or post['accessories'] }}" required>
+
+        <label for="body">产品描述</label>
+        <textarea name="body" id="body">{{ request.form['description'] or post['description'] }}</textarea>
+
+        <label>点击修改产品图片</label>
+        <div class="icons">
+            <div style="position: relative;">
+                <input class="upload-input" type="file" name="file0" onchange="showImg(this, 0)">
+                <div>
+                    <img class="upload_icon" src="../../static/uploaded_files/upload.png">
+                </div>
+                    <img class="uploaded_pic" src="{{ '../../static/uploaded_files/' + post['pic_name0'] }}">
+            </div>
+            <div id="imgContainer0" style="margin-top: 10px;"></div>
+
+                <div style="position: relative;">
+                    <input class="upload-input" type="file" name="file1" onchange="showImg(this, 1)">
+                    <div>
+                        <img class="upload_icon" src="../../static/uploaded_files/upload.png">
+                    </div>
+                    <img class="uploaded_pic" src="{{ '../../static/uploaded_files/' + post['pic_name1'] }}">
+                </div>
+                <div id="imgContainer1" style="margin-top: 10px;"></div>
+
+                <div style="position: relative;">
+                    <input class="upload-input" type="file" name="file2" onchange="showImg(this, 2)">
+                    <div>
+                        <img class="upload_icon" src="../../static/uploaded_files/upload.png">
+                    </div>
+                    <img class="uploaded_pic" src="{{ '../../static/uploaded_files/' + post['pic_name2'] }}">
+                </div>
+                <div id="imgContainer2" style="margin-top: 10px;"></div>
+            </div>
+
+        <hr>
+
+        <input type="submit" value="保存">
+    </form>
+    <hr>
+    <form action="{{ url_for('log.product_delete', id=post['id']) }}" method="post">
+        <input class="danger" type="submit" value="删除" onclick="return confirm('确定要删除吗？');">
+    </form>
+
+    <script>
+        function showImg(obj, i) {
+            var files = obj.files
+            document.getElementById("imgContainer" + i).innerHTML = getImgsByUrl(files)
+        }
+
+        function getImgsByUrl(files) {
+            var elements = ''
+            var url = window.URL.createObjectURL(files[0])
+            elements += "<img src='"+ url + "' style='height: 160px; vertical-align: middle; margin-right: 5px;'>"
+
+            return elements
+        }
+    </script>
+{% endblock %}

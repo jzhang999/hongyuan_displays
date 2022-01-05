@@ -1,23 +1,7 @@
 // instance of the page
 Page({
   data: {
-    items: [],
-    cats: []
-  },
-  handleTap_cat(e) {
-    wx.redirectTo({
-      url: '../cat_search/cat_search'
-    })
-  },
-  handleTap_prod(e) {
-    wx.redirectTo({
-      url: '../product_search/product_search'
-    })
-  },
-  handleTap_more(e) {
-    wx.redirectTo({
-      url: '../more_rec/more_rec'
-    })
+    items: []
   },
   goDetail(e) {
     let id = e.currentTarget.dataset.id;

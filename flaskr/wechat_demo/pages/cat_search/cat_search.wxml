@@ -9,7 +9,7 @@
 
 <view wx:for="{{items}}">
   <view class="pics">
-    <image bindtap="goDetail" data-id="{{item['id']}}" src = "https://www.ningbohongyuan.com/static/uploaded_files/{{item['pic_name0']}}" mode="aspectFit"></image>
+    <image bindtap="goDetail" data-id="{{item['id']}}" src = "http://127.0.0.1:5000/static/uploaded_files/{{item['pic_name0']}}" mode="aspectFit"></image>
   </view>
   <view class="desc">
     <view><text>产品名称: {{item["product_name"]}}</text></view>

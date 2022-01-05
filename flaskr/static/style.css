@@ -25,3 +25,51 @@ nav ul li a, nav ul li span, header .action { display: block; padding: 0.5rem; }
 input.danger { color: #cc2f2e; }
 input[type=submit] { align-self: start; min-width: 10em; }
 .subtitle {font-family: serif; color: #377ba8;}
+
+.img_container {
+    flex-direction:row;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    grid-column-gap: 50px;
+}
+
+.imgshow {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.img {
+    width: auto;
+    height: 250px;
+}
+
+.upload-input {
+    position: absolute;
+    opacity: 0;
+}
+
+.icons {
+    flex-direction:row;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    grid-column-gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.upload_icon {
+    width: 60px;
+    vertical-align: middle;
+}
+
+.uploaded_pic {
+    height: 160px;
+    vertical-align: middle;
+    margin-right: 5px;
+}

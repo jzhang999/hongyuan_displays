@@ -9,14 +9,39 @@
 
 <view class="line"></view>
 
-<view class="item" wx:for="{{items}}" wx:if="{{index<2}}">
-  <view class="product">
+<!-- recommendation part -->
+<view class="product">
+  <view wx:for="{{items}}" wx:if="{{index < 2}}">
     <view class="pics">
-      <image bindtap="goDetail" data-id="{{item['id']}}" src = "https://www.ningbohongyuan.com/static/uploaded_files/{{item['pic_name0']}}" mode="aspectFit"></image>
+      <image bindtap="goDetail" data-id="{{item['id']}}" src = "http://127.0.0.1:5000/static/uploaded_files/{{item['pic_name0']}}" mode="aspectFit"></image>
     </view>
     <view class="desc">
-      <view><text>产品名称: {{item["product_name"]}}</text></view>
-      <view><text>产品分类: {{item["category"]}}</text></view>
+      <view><text>{{item["product_name"]}}</text></view>
+      <!-- <view><text>产品分类: {{item["category"]}}</text></view> -->
+    </view>
+  </view>
+</view>
+
+<view class="for_more">
+  <button class="more" bindtap="handleTap_more">
+    <text class='more_rec_text'>--- 点击获取更多推荐 ---</text>
+  </button>
+</view>
+
+<!-- category part -->
+<view class="line"></view>
+<view>
+  <text class="cat"> 产 品 分 类 </text>
+</view>
+<view class="line"></view>
+
+<view class="category">
+  <view wx:for="{{cats}}" wx:if="{{index < 6}}">
+    <view class="pics">
+      <image bindtap="goDetail" data-id="{{item['id']}}" src = "http://127.0.0.1:5000/static/uploaded_files/{{item['pic_name0']}}" mode="aspectFit"></image>
+    </view>
+    <view class="desc">
+      <view><text>{{item["product_name"]}}</text></view>
     </view>
   </view>
 </view>

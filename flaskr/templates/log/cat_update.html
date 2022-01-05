@@ -11,7 +11,7 @@
     <input type="submit" value="保存">
   </form>
   <hr>
-  <form action="{{ url_for('blog.cat_delete', cat_name=post['cat_name']) }}" method="post">
+  <form action="{{ url_for('log.cat_delete', cat_name=post['cat_name']) }}" method="post">
     <input class="danger" type="submit" value="删除" onclick="return confirm('确定要删除吗？');">
   </form>
 {% endblock %}
