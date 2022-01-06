@@ -14,7 +14,7 @@ bp = Blueprint('categories', __name__)
 def index():
     db = get_db()
     posts = db.execute(
-        ' SELECT cat_name'
+        ' SELECT cat_name, cat_icon_name'
         ' FROM category'
         ' ORDER BY cat_name DESC'
     ).fetchall()
@@ -34,8 +34,8 @@ def cat_search():
     return json.dumps(dicts)
 
 
-@bp.route('/get_all_cats', methods=('GET', 'POST'))
-def get_all_cats():
+@bp.route('/get_all_cat_names', methods=('GET', 'POST'))
+def get_all_cat_names():
     db = get_db()
     cats = db.execute(
         ' SELECT cat_name'
@@ -51,6 +51,24 @@ def get_all_cats():
         results.append(dict["cat_name"])
 
     return json.dumps(results)
+
+@bp.route('/get_all_cat_objs', methods=('GET', 'POST'))
+def get_all_cat_objs():
+    db = get_db()
+    cats = db.execute(
+        ' SELECT *'
+        ' FROM category'
+    ).fetchall()
+
+    dicts = []
+    for result in cats:
+        dicts.append(dict(result))
+
+    # results = []
+    # for dict in dicts:
+    #     results.append(dict["cat_name"])
+
+    return json.dumps(dicts)
 
 
 def get_post(key):

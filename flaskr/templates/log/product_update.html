@@ -28,31 +28,30 @@
                 <div>
                     <img class="upload_icon" src="../../static/upload.png">
                 </div>
-                    <img class="uploaded_pic" src="{{ '../../static/uploaded_files/' + post['pic_name0'] }}">
+                <img id="pic0" class="uploaded_pic" src="{{ '../../static/uploaded_files/' + post['pic_name0'] }}">
             </div>
             <div id="imgContainer0" style="margin-top: 10px;"></div>
 
-                <div style="position: relative;">
-                    <input class="upload-input" type="file" name="file1" onchange="showImg(this, 1)">
-                    <div>
-                        <img class="upload_icon" src="../../static/upload.png">
-                    </div>
-                    <img class="uploaded_pic" src="{{ '../../static/uploaded_files/' + post['pic_name1'] }}">
+            <div style="position: relative;">
+                <input class="upload-input" type="file" name="file1" onchange="showImg(this, 1)">
+                <div>
+                    <img class="upload_icon" src="../../static/upload.png">
                 </div>
-                <div id="imgContainer1" style="margin-top: 10px;"></div>
-
-                <div style="position: relative;">
-                    <input class="upload-input" type="file" name="file2" onchange="showImg(this, 2)">
-                    <div>
-                        <img class="upload_icon" src="../../static/upload.png">
-                    </div>
-                    <img class="uploaded_pic" src="{{ '../../static/uploaded_files/' + post['pic_name2'] }}">
-                </div>
-                <div id="imgContainer2" style="margin-top: 10px;"></div>
+                <img id="pic1" class="uploaded_pic" src="{{ '../../static/uploaded_files/' + post['pic_name1'] }}">
             </div>
+            <div id="imgContainer1" style="margin-top: 10px;"></div>
+
+            <div style="position: relative;">
+                <input class="upload-input" type="file" name="file2" onchange="showImg(this, 2)">
+                <div>
+                    <img class="upload_icon" src="../../static/upload.png">
+                </div>
+                <img id="pic2" class="uploaded_pic" src="{{ '../../static/uploaded_files/' + post['pic_name2'] }}">
+            </div>
+            <div id="imgContainer2" style="margin-top: 10px;"></div>
+        </div>
 
         <hr>
-
         <input type="submit" value="保存">
     </form>
     <hr>
@@ -63,15 +62,7 @@
     <script>
         function showImg(obj, i) {
             var files = obj.files
-            document.getElementById("imgContainer" + i).innerHTML = getImgsByUrl(files)
-        }
-
-        function getImgsByUrl(files) {
-            var elements = ''
-            var url = window.URL.createObjectURL(files[0])
-            elements += "<img src='"+ url + "' style='height: 160px; vertical-align: middle; margin-right: 5px;'>"
-
-            return elements
+            document.getElementById("pic" + i).src = window.URL.createObjectURL(files[0])
         }
     </script>
 {% endblock %}

@@ -59,6 +59,7 @@
   justify-content: center; 
   align-items: center;
   background-color: white;
+  margin-top: 15rpx;
 }
 
 .pics image{
@@ -80,4 +81,28 @@
 .more_rec_text {
   width: 100%;
   color: rgb(85, 84, 84);
+}
+
+.category {
+  flex-direction:row;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 15rpx;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center;
+  background-color: white;
+}
+
+.icons image{
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.icon_name {
+  text-align: center;
 }

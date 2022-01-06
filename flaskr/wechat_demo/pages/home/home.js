@@ -2,13 +2,13 @@
 Page({
   data: {
     items: [],
-    cats: []
+    cat_objs: []
   },
-  handleTap_cat(e) {
-    wx.redirectTo({
-      url: '../cat_search/cat_search'
-    })
-  },
+  // handleTap_cat(e) {
+  //   wx.redirectTo({
+  //     url: '../cat_search/cat_search'
+  //   })
+  // },
   handleTap_prod(e) {
     wx.redirectTo({
       url: '../product_search/product_search'
@@ -39,5 +39,22 @@ Page({
         that.setData({ items: res.data });
       }
     });
-  }
+  },
+  onShow: function (options) {
+    const that = this;
+    wx.request({
+      url: 'http://127.0.0.1:5000/get_all_cat_objs',
+      method: "POST",
+      success(res) {
+        that.setData({ cat_objs: res.data });
+      }
+    });
+  },
+  goCategory(e) {
+    let cat_name = e.currentTarget.dataset.id;
+    wx.setStorageSync('catname', e.currentTarget.dataset.id);
+    wx.navigateTo({
+      url: '../cat_search/cat_search',
+    })
+  },
 });

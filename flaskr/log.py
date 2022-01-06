@@ -72,6 +72,11 @@ def cat_create():
         cat_name = request.form['cat_name']
         error = None
 
+        pic0 = request.files['file0']
+        pic_name0 = str(datetime.datetime.now()) + '@' + pic0.filename
+        pic0.save(
+            os.path.join("/Users/zhangjing/Documents/GitHub/hongyuan_displays/flaskr/static/uploaded_files", pic_name0))
+
         if not cat_name:
             error = 'Category name is required.'
 
@@ -80,9 +85,9 @@ def cat_create():
         else:
             db = get_db()
             db.execute(
-                'INSERT INTO category (cat_name)'
-                ' VALUES (?)',
-                (cat_name,)
+                'INSERT INTO category (cat_name, cat_icon_name)'
+                ' VALUES (?, ?)',
+                (cat_name, pic_name0)
             )
             db.commit()
             return redirect(url_for('log.index'))

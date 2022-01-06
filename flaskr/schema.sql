@@ -26,5 +26,6 @@ CREATE TABLE product (
 );
 
 CREATE TABLE category (
-  cat_name TEXT PRIMARY KEY UNIQUE NOT NULL
+  cat_name TEXT PRIMARY KEY UNIQUE NOT NULL,
+  cat_icon_name STRING NOT NULL
 );

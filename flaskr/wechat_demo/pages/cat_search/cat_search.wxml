@@ -1,11 +1,11 @@
-<view class="section">
+<!-- <view class="section">
   <view class="section_title">请选择产品分类</view>
-  <picker bindchange="bindPickerChange" value="{{index}}" range="{{cat_array}}">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{cat_name_array}}">
     <view class="picker">
-      <text class="text">当前选择：{{cat_array[index]}} </text>
+      <text class="text">当前选择：{{cat_name_array[index]}} </text>
     </view>
   </picker>
-</view>
+</view> -->
 
 <view wx:for="{{items}}">
   <view class="pics">
