@@ -190,16 +190,26 @@ def product_delete(id):
 @login_required
 def cat_update(cat_name):
     post = get_db().execute(
-        ' SELECT cat_name'
+        ' SELECT cat_name, cat_icon_name'
         ' FROM category'
         ' WHERE cat_name = ?',
         (cat_name,)
     ).fetchone()
 
+    icon_name = post['cat_icon_name']
+
     if request.method == 'POST':
         new_cat_name = request.form['cat_name']
+        pic0 = request.files['file0']
         error = None
 
+        # see if the pic is changed
+        if pic0.filename != "":
+            os.remove(os.path.join("/Users/zhangjing/Documents/GitHub/hongyuan_displays/flaskr/static/uploaded_files",
+                                   post['cat_icon_name']))
+            icon_name = str(datetime.datetime.now()) + '@' + pic0.filename
+            pic0.save(os.path.join("/Users/zhangjing/Documents/GitHub/hongyuan_displays/flaskr/static/uploaded_files",
+                                   icon_name))
         if not cat_name:
             error = 'Category name is required.'
 
@@ -208,9 +218,9 @@ def cat_update(cat_name):
         else:
             db = get_db()
             db.execute(
-                ' UPDATE category SET cat_name = ?'
+                ' UPDATE category SET cat_name = ?, cat_icon_name = ? '
                 ' WHERE cat_name = ?',
-                (new_cat_name, cat_name,)
+                (new_cat_name, icon_name, cat_name,)
             )
             db.commit()
             return redirect(url_for('log.index'))
@@ -222,6 +232,17 @@ def cat_update(cat_name):
 @login_required
 def cat_delete(cat_name):
     db = get_db()
+
+    post = db.execute(
+        ' SELECT cat_name, cat_icon_name'
+        ' FROM category'
+        ' WHERE cat_name = ?',
+        (cat_name,)
+    ).fetchone()
+
+    os.remove(os.path.join("/Users/zhangjing/Documents/GitHub/hongyuan_displays/flaskr/static/uploaded_files",
+                           post['cat_icon_name']))
+
     db.execute('DELETE FROM category WHERE cat_name = ?', (cat_name,))
     db.commit()
     return redirect(url_for('log.index'))

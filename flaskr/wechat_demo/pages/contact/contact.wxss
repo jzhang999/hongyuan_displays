@@ -1,4 +1,16 @@
+.title {
+  text-align: center;
+  font-size: large;
+  font-weight: 900;
+  margin-top: 20rpx;
+  color: rgb(175, 131, 37);
+}
+
 .texts {
   color: grey;
   padding: 20px;
+}
+
+.img {
+  margin: 0 auto;
 }

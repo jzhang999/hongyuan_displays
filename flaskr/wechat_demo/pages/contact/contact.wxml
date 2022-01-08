@@ -1,12 +1,26 @@
+<view class="title">
+  <text>感恩选择 不负信任</text>
+</view>
+
 <view class="texts">
   <text>宁波市鸿源美腾办公设备有限公司</text>
 </view>
 <view class="texts">
-  <text>浙江省宁波市海曙区中宪巷19号三楼113工位</text>
+  <text>地址：宁波市海曙区东渡路29号6楼A09</text>
 </view>
 <view class="texts">
-  <text>联系电话：13615743310</text>
+  <text>服务：13306843920 （微信同号）</text>
+  <button class="call" bindtap="call_service"><text class='call_service_text'>呼叫服务电话</text></button>
 </view>
 <view class="texts">
-  <text>咨询微信：nbhyzwf</text>
+  <text>热线：13615743310 （微信同号）</text>
+  <button class="call" bindtap="call_line"><text class='call_line_text'>呼叫热线电话</text></button>
+</view>
+
+<view class='popup'>
+  <modal title="添加客服咨询" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">
+    <view class="img_wrapper">
+      <image class="img" src="../static/qrcode.png" mode="aspectFit"></image>
+    </view>
+  </modal>
 </view>
