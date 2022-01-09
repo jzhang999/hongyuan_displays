@@ -1,4 +1,4 @@
-<form catchsubmit="formSubmit">
+<!-- <form catchsubmit="formSubmit">
   <view class="search-bar">
     <view class="search-bar-cells">
       <input class="search-bar-input" name="input" placeholder="请输入产品名称" />
@@ -7,7 +7,7 @@
   <view class="btn-area">
     <button style="margin: 30rpx 0rpx" formType="submit"><text class="text">查询</text></button>
   </view>
-</form>
+</form> -->
 
 <view wx:for="{{items}}" wx:key="*this">
   <view class="pics">

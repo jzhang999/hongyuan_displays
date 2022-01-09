@@ -4,16 +4,17 @@ Page({
     items: [],
     cat_objs: []
   },
-  // handleTap_cat(e) {
-  //   wx.redirectTo({
-  //     url: '../cat_search/cat_search'
-  //   })
-  // },
-  handleTap_prod(e) {
+  formSubmit(e) {
+    wx.setStorageSync('searchKey', JSON.stringify(e.detail.value));
     wx.redirectTo({
       url: '../product_search/product_search'
     })
   },
+  // handleTap_prod(e) {
+  //   wx.redirectTo({
+  //     url: '../product_search/product_search'
+  //   })
+  // },
   handleTap_more(e) {
     wx.redirectTo({
       url: '../more_rec/more_rec'

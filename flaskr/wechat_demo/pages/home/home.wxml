@@ -1,17 +1,30 @@
-<view class="btn">
-  <!-- <button class="cat_search" bindtap="handleTap_cat"><text class='cat_search_text'>按类别查找</text></button> -->
-  <button class="prod_search" bindtap="handleTap_prod"><text class='prod_search_text'>按产品查找</text></button>
-</view>
+<form catchsubmit="formSubmit">
+  <view class="search-bar">
+    <view class="search-bar-cells">
+      <input class="search-bar-input" name="input" placeholder="请输入产品名称进行查找"/>
+    </view>
+
+    <view class="btn-area">
+      <button formType="submit" class="btn">
+        <view class="search_img">
+          <image src="../static/search_icon.png" mode="aspectFit"></image>
+        </view>
+      </button>
+    </view> 
+  </view>
+</form>
+
+<view class="line"></view>
 
 <view>
-  <text class="rec"> 本 期 推 荐 </text>
+  <text class="words"> 本 期 推 荐 </text>
 </view>
 
 <view class="line"></view>
 
 <!-- recommendation part -->
 <view class="product">
-  <view wx:for="{{items}}" wx:if="{{index < 3}}">
+  <view wx:for="{{items}}" wx:if="{{index < 2}}">
     <view class="pics">
       <image bindtap="goDetail" data-id="{{item['id']}}" src = "http://127.0.0.1:5000/static/uploaded_files/{{item['pic_name0']}}" mode="aspectFit"></image>
     </view>
@@ -34,7 +47,7 @@
 <!-- category part -->
 <view class="line"></view>
 <view>
-  <text class="cat"> 产 品 分 类 </text>
+  <text class="words"> 产 品 分 类 </text>
 </view>
 <view class="line"></view>
 
@@ -62,7 +75,7 @@
 <!-- Brands -->
 <view class="line"></view>
 <view>
-  <text class="cat"> 品 牌 专 区 </text>
+  <text class="words"> 品 牌 专 区 </text>
 </view>
 <view class="line"></view>
 
