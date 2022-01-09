@@ -8,7 +8,7 @@
 }
 
 .search-bar-input {
-  margin-top: 25rpx;
+  margin-top: 23rpx;
   text-align: center;
   font-size: medium;
 }
@@ -18,7 +18,7 @@
 }
 
 .btn {
-  width: 85rpx;
+  width: 88rpx;
   height: 80rpx;
   float: right;
 }
@@ -54,7 +54,7 @@
 
 .desc {
   padding: 8px;
-  margin-bottom: 30rpx;
+  margin-bottom: 12rpx;
   font-weight: 400;
   font-size: small;
   color: grey;
@@ -85,6 +85,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-top: 15rpx;
+  margin-bottom: 15rpx;
 }
 
 .icons {
