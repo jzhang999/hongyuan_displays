@@ -13,6 +13,7 @@ CREATE TABLE product (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   author_id INTEGER NOT NULL,
   category TEXT NOT NULL,
+  brand TEXT NOT NULL,
   created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   product_name TEXT NOT NULL,
   description TEXT NOT NULL,
@@ -30,7 +31,7 @@ CREATE TABLE category (
   cat_icon_name STRING NOT NULL
 );
 
-CREATE TABLE brand (
+CREATE TABLE brands (
   brand_name TEXT PRIMARY KEY UNIQUE NOT NULL,
   brand_icon_name STRING NOT NULL
 );

@@ -4,9 +4,12 @@
     "pages/company_info/company_info",
     "pages/contact/contact",
     "pages/cat_search/cat_search",
+    "pages/brand_search/brand_search",
     "pages/product_search/product_search",
     "pages/detail/detail",
-    "pages/more_rec/more_rec"
+    "pages/more_rec/more_rec",
+    "pages/more_cat/more_cat",
+    "pages/more_brand/more_brand"
   ],
   "window": {
     "navigationBarBackgroundColor": "#BFBDBD",

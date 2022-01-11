@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}新增品牌{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <form method="post" enctype=multipart/form-data>
+        <label for="brand_name">名称</label>
+        <input name="brand_name" id="brand_name" value="{{ request.form['brand_name'] }}" required>
+
+        <label>点击上传品牌图标</label>
+
+        <div class="icons">
+            <div style="position: relative;">
+                <input class="upload-input" type="file" name="file0" onchange="showImg(this, 0)">
+                <div>
+                    <img class="upload_icon" src="../../static/upload.png">
+                </div>
+            </div>
+        </div>
+        <div id="imgContainer0" style="margin-top: 10px;"></div>
+        <input type="submit" value="保存" style="margin-top: 30px;">
+    </form>
+
+     <script>
+        function showImg(obj, i) {
+            var files = obj.files
+            document.getElementById("imgContainer" + i).innerHTML = getImgsByUrl(files)
+        }
+
+        function getImgsByUrl(files) {
+            var elements = ''
+            var url = window.URL.createObjectURL(files[0])
+            elements += "<img src='"+ url + "' style='height: 160px; vertical-align: middle; margin-right: 5px;'>"
+
+            return elements
+        }
+    </script>
+{% endblock %}

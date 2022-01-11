@@ -1,22 +1,22 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <h1>{% block title %}编辑分类{% endblock %}</h1>
+    <h1>{% block title %}编辑品牌{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
     <form method="post" enctype=multipart/form-data>
-        <label for="cat_name">名称</label>
-        <input name="cat_name" id="cat_name" value="{{ request.form['cat_name'] or post['cat_name'] }}" required>
+        <label for="brand_name">名称</label>
+        <input name="brand_name" id="brand_name" value="{{ request.form['brand_name'] or post['brand_name'] }}" required>
 
-        <label>点击修改分类图标</label>
+        <label>点击修改品牌图标</label>
         <div class="icons">
             <div style="position: relative;">
                 <input class="upload-input" type="file" name="file0" onchange="showImg(this, 0)">
                 <div>
                     <img class="upload_icon" src="../../static/upload.png">
                 </div>
-                <img id="pic0" class="uploaded_pic" src="{{ '../../static/uploaded_files/' + post['cat_icon_name'] }}">
+                <img id="pic0" class="uploaded_pic" src="{{ '../../static/uploaded_files/' + post['brand_icon_name'] }}">
             </div>
             <div id="imgContainer0" style="margin-top: 10px;"></div>
         </div>
@@ -25,7 +25,7 @@
     </form>
     <hr>
 
-    <form action="{{ url_for('log.cat_delete', cat_name=post['cat_name']) }}" method="post">
+    <form action="{{ url_for('brand.brand_delete', brand_name=post['brand_name']) }}" method="post">
         <input class="danger" type="submit" value="删除" onclick="return confirm('确定要删除吗？');">
     </form>
 

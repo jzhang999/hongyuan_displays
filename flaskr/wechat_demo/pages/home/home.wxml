@@ -36,7 +36,7 @@
 
   <view>
     <view class="pics">
-      <image bindtap="handleTap_more" src = "../static/more.png" mode="aspectFit"></image>
+      <image bindtap="handleTap_rec_more" src = "../static/more.png" mode="aspectFit"></image>
     </view>
     <view class="desc">
       <view><text> 更多 </text></view>
@@ -51,7 +51,7 @@
 </view>
 <view class="line"></view>
 
-<view class="category">
+<view class="icon_display">
   <view wx:for="{{cat_objs}}" wx:if="{{index < 7}}">
     <view class="icons">
       <image bindtap="goCategory" data-id="{{item['cat_name']}}" src = "http://127.0.0.1:5000/static/uploaded_files/{{item['cat_icon_name']}}" mode="aspectFit"></image>
@@ -64,7 +64,7 @@
   <!-- More icon -->
   <view>
     <view class="icons">
-      <image bindtap="goDetail" data-id="{{item['id']}}" src = "../static/more.png" mode="aspectFit"></image>
+      <image bindtap="handleTap_cat_more" data-id="{{item['id']}}" src = "../static/more.png" mode="aspectFit"></image>
     </view>
     <view class="icon_name">
       <view><text> 更多 </text></view>
@@ -79,20 +79,20 @@
 </view>
 <view class="line"></view>
 
-<view class="category">
-  <view wx:for="{{cat_objs}}" wx:if="{{index < 7}}">
+<view class="icon_display">
+  <view wx:for="{{brand_objs}}" wx:if="{{index < 7}}">
     <view class="icons">
-      <image bindtap="goCategory" data-id="{{item['cat_name']}}" src = "http://127.0.0.1:5000/static/uploaded_files/{{item['cat_icon_name']}}" mode="aspectFit"></image>
+      <image bindtap="goBrand" data-id="{{item['brand_name']}}" src = "http://127.0.0.1:5000/static/uploaded_files/{{item['brand_icon_name']}}" mode="aspectFit"></image>
     </view>
     <view class="icon_name">
-      <view><text>{{item["cat_name"]}}</text></view>
+      <view><text>{{item["brand_name"]}}</text></view>
     </view>
   </view>
 
   <!-- More icon -->
   <view>
     <view class="icons">
-      <image bindtap="goDetail" data-id="{{item['id']}}" src = "../static/more.png" mode="aspectFit"></image>
+      <image bindtap="handleTap_brand_more" data-id="{{item['id']}}" src = "../static/more.png" mode="aspectFit"></image>
     </view>
     <view class="icon_name">
       <view><text> 更多 </text></view>

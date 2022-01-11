@@ -12,6 +12,9 @@
         <label>分类</label>
         <input name="cat" id="cat" value="{{ request.form['cat'] or post['category'] }}" required>
 
+        <label>品牌</label>
+        <input name="br" id="brand" value="{{ request.form['br'] or post['brand'] }}" required>
+
         <label>是否推荐</label>
         <input name="rec" id="rec" value="{{ request.form['rec'] or post['recommend'] }}" required>
 
@@ -55,7 +58,7 @@
         <input type="submit" value="保存">
     </form>
     <hr>
-    <form action="{{ url_for('log.product_delete', id=post['id']) }}" method="post">
+    <form action="{{ url_for('products.product_delete', id=post['id']) }}" method="post">
         <input class="danger" type="submit" value="删除" onclick="return confirm('确定要删除吗？');">
     </form>
 

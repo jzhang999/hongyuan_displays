@@ -19,3 +19,15 @@
         <a class="action" href="{{ url_for('brand.index') }}">查看</a>
     {% endif %}
 {% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+        <div>
+            <div>
+                <h3 style="display: inline-block; font-family: serif">{{ post['brand_name'] }}</h3>
+            </div>
+            <img class="img" src="{{'../../static/uploaded_files/' + post['brand_icon_name']}}">
+            <a style="float: right" class="action" href="{{ url_for('categories.cat_update', cat_name=post['brand_name']) }}">编辑</a>
+        </div>
+    {% endfor %}
+{% endblock %}

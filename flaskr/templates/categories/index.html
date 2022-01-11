@@ -3,14 +3,20 @@
 {% block header %}
     <h1>产品</h1>
     {% if g.user %}
-        <a class="action" href="{{ url_for('log.product_create') }}">新建</a>
+        <a class="action" href="{{ url_for('products.product_create') }}">新建</a>
         <a class="action" href="{{ url_for('products.index') }}">查看</a>
     {% endif %}
 
     <h1>分类</h1>
     {% if g.user %}
-        <a class="action" href="{{ url_for('log.cat_create') }}">新建</a>
+        <a class="action" href="{{ url_for('categories.cat_create') }}">新建</a>
         <a class="action" href="{{ url_for('categories.index') }}">查看</a>
+    {% endif %}
+
+    <h1>品牌</h1>
+    {% if g.user %}
+        <a class="action" href="{{ url_for('brand.brand_create') }}">新建</a>
+        <a class="action" href="{{ url_for('brand.index') }}">查看</a>
     {% endif %}
 {% endblock %}
 
@@ -21,7 +27,7 @@
                 <h3 style="display: inline-block; font-family: serif">{{ post['cat_name'] }}</h3>
             </div>
             <img class="img" src="{{'../../static/uploaded_files/' + post['cat_icon_name']}}">
-            <a style="float: right" class="action" href="{{ url_for('log.cat_update', cat_name=post['cat_name']) }}">编辑</a>
+            <a style="float: right" class="action" href="{{ url_for('categories.cat_update', cat_name=post['cat_name']) }}">编辑</a>
         </div>
     {% endfor %}
 {% endblock %}
