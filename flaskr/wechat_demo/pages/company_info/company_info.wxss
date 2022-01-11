@@ -6,4 +6,5 @@
 .pic {
   margin-top: 50rpx;
   padding: 20px;
+  text-align: center;
 }

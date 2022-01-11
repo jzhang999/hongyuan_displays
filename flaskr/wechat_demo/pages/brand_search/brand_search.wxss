@@ -32,6 +32,12 @@
 }
 
 .pics image{
-  width: 400rpx;
-  height: 400rpx;
+  width: 250rpx;
+  height: 250rpx;
+}
+
+.brands {
+  flex-direction:row;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }

@@ -6,7 +6,7 @@
 <view class="brand">
   <view wx:for="{{brand_objs}}">
     <view class="icons">
-      <image bindtap="goBrand" data-id="{{item['brand_name']}}" src = "http://127.0.0.1:5000/static/uploaded_files/{{item['brand_icon_name']}}" mode="aspectFit"></image>
+      <image bindtap="goBrand" data-id="{{item['brand_name']}}" src = "https://www.ningbohongyuan.com/static/uploaded_files/{{item['brand_icon_name']}}" mode="aspectFit"></image>
     </view>
     <view class="icon_name">
       <view><text>{{item["brand_name"]}}</text></view>

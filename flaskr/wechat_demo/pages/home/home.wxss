@@ -23,6 +23,11 @@
   float: right;
 }
 
+.btn_txt {
+  color: grey;
+  text-align: center;
+}
+
 .search_img image{
   margin-top: 20rpx;
   width: 50rpx;

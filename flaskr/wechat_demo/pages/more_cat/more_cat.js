@@ -6,7 +6,7 @@ Page({
   onShow: function (options) {
     const that = this;
     wx.request({
-      url: 'http://127.0.0.1:5000/get_all_cat_objs',
+      url: 'https://www.ningbohongyuan.com/get_all_cat_objs',
       method: "POST",
       success(res) {
         that.setData({ cat_objs: res.data });

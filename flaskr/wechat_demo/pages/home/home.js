@@ -3,7 +3,9 @@ Page({
   data: {
     items: [],
     cat_objs: [],
-    brand_objs: []
+    brand_objs: [],
+    autoplay: true,
+    interval: 3000
   },
   formSubmit(e) {
     wx.setStorageSync('searchKey', JSON.stringify(e.detail.value));
@@ -36,7 +38,7 @@ Page({
   onLoad(e) {
     const that = this;
     wx.request({
-      url: 'http://127.0.0.1:5000/recommendation',
+      url: 'https://www.ningbohongyuan.com/recommendation',
       method: "POST",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
@@ -51,14 +53,14 @@ Page({
   onShow: function (options) {
     const that = this;
     wx.request({
-      url: 'http://127.0.0.1:5000/get_all_cat_objs',
+      url: 'https://www.ningbohongyuan.com/get_all_cat_objs',
       method: "POST",
       success(res) {
         that.setData({ cat_objs: res.data });
       }
     });
     wx.request({
-      url: 'http://127.0.0.1:5000/get_all_brand_objs',
+      url: 'https://www.ningbohongyuan.com/get_all_brand_objs',
       method: "POST",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"

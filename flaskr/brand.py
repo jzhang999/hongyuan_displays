@@ -31,7 +31,7 @@ def brand_create():
         pic0 = request.files['file0']
         pic_name0 = str(datetime.datetime.now()) + '@' + pic0.filename
         pic0.save(
-            os.path.join("/Users/zhangjing/Documents/GitHub/hongyuan_displays/flaskr/static/uploaded_files", pic_name0))
+            os.path.join("/var/www/hongyuan_displays/flaskr/static/uploaded_files", pic_name0))
 
         if not brand_name:
             error = 'Brand name is required.'
@@ -69,10 +69,10 @@ def brand_update(brand_name):
 
         # see if the pic is changed
         if pic0.filename != "":
-            os.remove(os.path.join("/Users/zhangjing/Documents/GitHub/hongyuan_displays/flaskr/static/uploaded_files",
+            os.remove(os.path.join("/var/www/hongyuan_displays/flaskr/static/uploaded_files",
                                    post['brand_icon_name']))
             icon_name = str(datetime.datetime.now()) + '@' + pic0.filename
-            pic0.save(os.path.join("/Users/zhangjing/Documents/GitHub/hongyuan_displays/flaskr/static/uploaded_files",
+            pic0.save(os.path.join("/var/www/hongyuan_displays/flaskr/static/uploaded_files",
                                    icon_name))
         if not brand_name:
             error = 'Brand name is required.'
@@ -104,7 +104,7 @@ def brand_delete(brand_name):
         (brand_name,)
     ).fetchone()
 
-    os.remove(os.path.join("/Users/zhangjing/Documents/GitHub/hongyuan_displays/flaskr/static/uploaded_files",
+    os.remove(os.path.join("/var/www/hongyuan_displays/flaskr/static/uploaded_files",
                            post['brand_icon_name']))
 
     db.execute('DELETE FROM brands WHERE brand_name = ?', (brand_name,))

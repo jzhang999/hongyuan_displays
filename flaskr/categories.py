@@ -31,7 +31,7 @@ def cat_create():
         pic0 = request.files['file0']
         pic_name0 = str(datetime.datetime.now()) + '@' + pic0.filename
         pic0.save(
-            os.path.join("/Users/zhangjing/Documents/GitHub/hongyuan_displays/flaskr/static/uploaded_files", pic_name0))
+            os.path.join("/var/www/hongyuan_displays/flaskr/static/uploaded_files", pic_name0))
 
         if not cat_name:
             error = 'Category name is required.'
@@ -69,10 +69,10 @@ def cat_update(cat_name):
 
         # see if the pic is changed
         if pic0.filename != "":
-            os.remove(os.path.join("/Users/zhangjing/Documents/GitHub/hongyuan_displays/flaskr/static/uploaded_files",
+            os.remove(os.path.join("/var/www/hongyuan_displays/flaskr/static/uploaded_files",
                                    post['cat_icon_name']))
             icon_name = str(datetime.datetime.now()) + '@' + pic0.filename
-            pic0.save(os.path.join("/Users/zhangjing/Documents/GitHub/hongyuan_displays/flaskr/static/uploaded_files",
+            pic0.save(os.path.join("/var/www/hongyuan_displays/flaskr/static/uploaded_files",
                                    icon_name))
         if not cat_name:
             error = 'Category name is required.'
@@ -104,7 +104,7 @@ def cat_delete(cat_name):
         (cat_name,)
     ).fetchone()
 
-    os.remove(os.path.join("/Users/zhangjing/Documents/GitHub/hongyuan_displays/flaskr/static/uploaded_files",
+    os.remove(os.path.join("/var/www/hongyuan_displays/flaskr/static/uploaded_files",
                            post['cat_icon_name']))
 
     db.execute('DELETE FROM category WHERE cat_name = ?', (cat_name,))

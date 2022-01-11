@@ -23,7 +23,7 @@ Page({
 
     const that = this;
     wx.request({
-      url: 'http://127.0.0.1:5000/brand_search',
+      url: 'https://www.ningbohongyuan.com/brand_search',
       method: "POST",
       data: {
         search_key: that.data.search_key,

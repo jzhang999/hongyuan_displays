@@ -13,7 +13,7 @@ Page({
   onLoad(e) {
     const that = this;
     wx.request({
-      url: 'http://127.0.0.1:5000/recommendation',
+      url: 'https://www.ningbohongyuan.com/recommendation',
       method: "POST",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
