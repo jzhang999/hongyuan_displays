@@ -49,12 +49,12 @@
 </view>
 <view class="line"></view>
 
-<view class="icon_display">
-  <view wx:for="{{cat_objs}}" wx:if="{{index < 7}}">
+<view class="cats_display">
+  <view wx:for="{{cat_objs}}" wx:if="{{index < 5}}">
     <view class="icons">
       <image bindtap="goCategory" data-id="{{item['cat_name']}}" src = "https://www.ningbohongyuan.com/static/uploaded_files/{{item['cat_icon_name']}}" mode="aspectFit"></image>
     </view>
-    <view class="icon_name">
+    <view class="cats_icon_name">
       <view><text>{{item["cat_name"]}}</text></view>
     </view>
   </view>
@@ -77,7 +77,7 @@
 </view>
 <view class="line"></view>
 
-<view class="icon_display">
+<view class="brand_display">
   <view wx:for="{{brand_objs}}" wx:if="{{index < 7}}">
     <view class="icons">
       <image bindtap="goBrand" data-id="{{item['brand_name']}}" src = "https://www.ningbohongyuan.com/static/uploaded_files/{{item['brand_icon_name']}}" mode="aspectFit"></image>
